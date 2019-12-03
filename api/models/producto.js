@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   producto.associate = function(models) {
     // associations can be defined here
+    producto.belongsTo(models.categoria);
   };
   return producto;
 };

@@ -6,8 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     direccion: DataTypes.STRING,
     celular: DataTypes.STRING
   }, {});
-  proveedor.associate = function(models) {
+  proveedor.associate= function(models) {
     // associations can be defined here
+      proveedor.hasMany(models.producto,{
+        
+      })
   };
   return proveedor;
 };
