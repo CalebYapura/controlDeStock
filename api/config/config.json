@@ -1,8 +1,8 @@
 {
     "development": {
         "username": "sa",
-        "password": "1844",
-        "database": "api",
+        "password": "1234",
+        "database": "stock",
         "host": "127.0.0.1",
         "dialect": "mssql",
         "operatorsAliases": false
