@@ -22,7 +22,16 @@ module.exports = {
                 }
             },
             idproveedor: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    // model: 'proveedor',
+                    // key: 'id'
+                    model: {
+                        tableName: 'proveedors',
+                        schema: 'dbo'
+                    }
+                    , key: 'id'
+                }
             },
             createdAt: {
                 allowNull: false,
