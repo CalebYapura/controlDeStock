@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   producto.associate = function(models) {
     // associations can be defined here
     producto.belongsTo(models.categoria);
+    producto.belongsTo(models.proveedor);
+
+    producto.hasMany(models.pedido, {
+      foreignKey: 'idproducto', as: 'pedido'
+    });
   };
   return producto;
 };
