@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 
      pedido.hasMany(models.detallepedido,{
       foreignKey: 'pedidoId', as: 'detallepedido'
-     })
+     });
   };
   return pedido;
 };

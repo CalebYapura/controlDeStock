@@ -10,6 +10,9 @@ var artistaRouter = require('./routes/artista-route');
 var categoria = require('./routes/categoria-route');
 var proveedor = require('./routes/proveedor-route');
 var producto = require('./routes/producto-route');
+var cliente = require('./routes/cliente-route');
+var pedido = require('./routes/pedido-route');
+
 
 var app = express();
 
@@ -29,6 +32,8 @@ app.use('/artista', artistaRouter);
 app.use('/categoria', categoria);
 app.use('/producto', producto);
 app.use('/proveedor', proveedor);
+app.use('/cliente', cliente);
+app.use('/pedido', pedido);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

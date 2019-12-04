@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var tipoAsambleaController = require('../controller/categoriaContoller');
+var categoriaContoller = require('../controller/categoriaContoller');
 /* GET users listing. */
-router.get('', tipoAsambleaController.get);
-router.post('', tipoAsambleaController.create);
-router.put('/:id', tipoAsambleaController.update);
-router.delete('/:id', tipoAsambleaController.eliminar);
-router.get('/:id', tipoAsambleaController.getId);
+router.get('', categoriaContoller.get);
+router.post('', categoriaContoller.create);
+router.put('/:id', categoriaContoller.update);
+router.delete('/:id', categoriaContoller.eliminar);
+router.get('/:id', categoriaContoller.getId);
 module.exports = router;
