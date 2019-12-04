@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   pedido.associate = function(models) {
     // associations can be defined here
+    pedido.belongsTo(models.producto);
+    pedido.belongsTo(models.cliente);
   };
   return pedido;
 };
