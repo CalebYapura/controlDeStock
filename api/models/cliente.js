@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   cliente.associate = function(models) {
     // associations can be defined here
     cliente.hasMany(models.pedido, {
-      foreignKey: 'idcliente', as: 'pedido'
+      foreignKey: 'clienteId', as: 'pedido'
     });
   };
   return cliente;

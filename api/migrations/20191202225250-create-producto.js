@@ -14,18 +14,21 @@ module.exports = {
             precioproducto: {
                 type: Sequelize.STRING
             },
-            idcategoria: {
+            categoriaId: {
                 type: Sequelize.INTEGER,
+
                 references: {
-                    model: 'categoria',
-                    key: 'id'
+                    model: {
+                        tableName: 'categoria',
+                        schema: 'dbo'
+                    }
+                    , key: 'id'
                 }
+
             },
-            idproveedor: {
+            proveedorId: {
                 type: Sequelize.INTEGER,
                 references: {
-                    // model: 'proveedor',
-                    // key: 'id'
                     model: {
                         tableName: 'proveedors',
                         schema: 'dbo'
