@@ -5,10 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: DataTypes.STRING
   }, {});
   categoria.associate = function(models) {
-    console.log(models);
     // associations can be defined here
-    categoria.hasMany(models.producto,{
-      foreignKey:'categoriaId', as:'producto'
+       categoria.hasMany(models.producto,{
+      foreignKey: 'categoriaId',
     });
   };
   return categoria;
