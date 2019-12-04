@@ -1,21 +1,23 @@
+
 const models = require('../models');
 
 
+
 function get(request, response) {
-    models.proveedor.findAll().then(data => {
-            response.json(data);
+    models.producto.findAll().then(data => {
+         return response.json(data);
         }
     )
+    // response.json('hola');
 }
 
 function create(request, response) {
     console.log(request);
-    models.proveedor.create({
-        nombre: request.body.nombre,
-        apellidos: request.body.apellidos,
-        direccion: request.body.direccion,
-        celular: request.body.celular,
-
+    models.producto.create({
+        nombreproducto: request.body.nombreproducto,
+        precioproducto: request.body.precioproducto,
+        categoriaId: request.body.categoriaId,
+        proveedorId: request.body.proveedorId,
 
     }).then(function (data) {
         if (data) {
@@ -28,7 +30,7 @@ function create(request, response) {
 
 function update(req, res) { //falta actualizar
     const nuevoDato = req.body;
-    models.proveedor.update(nuevoDato, {where: {id: req.params.id}})
+    models.producto.update(nuevoDato, {where: {id: req.params.id}})
         .then(date => {
             return res.status(200).json({message: "actualizado"});
         })
@@ -38,8 +40,8 @@ function update(req, res) { //falta actualizar
 }
 
 function eliminar(req, res) {
-    // console.log(req.params.id);
-    models.proveedor.destroy({where: {id: req.params.id}})
+    // // console.log(req.params.id);
+    models.producto.destroy({where: {id: req.params.id}})
         .then(date => {
             return res.status(200).json({message: "Eliminado correctamente "});
         })
@@ -49,17 +51,20 @@ function eliminar(req, res) {
 }
 
 function getId(req, res) {
-    // models.socios.find(req.params.id)
-    models.proveedor.findOne({
+    // // models.socios.find(req.params.id)
+    models.producto.findOne({
         where: {id: req.params.id},
-
+        include: [
+            {model: models.categoria, as: models.categoria},
+            {model: models.proveedor, as: models.proveedor}
+        ]
     })
         .then(data => {
             console.log(data);
             return res.status(200).json(data);
         })
         .catch(function (err) {
-            return res.status(404).json({message: "No existe categoria"});
+            return res.status(404).json({message: "No existe Tipo Socio"});
         });
 }
 

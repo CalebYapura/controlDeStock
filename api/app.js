@@ -8,8 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var artistaRouter = require('./routes/artista-route');
 var categoria = require('./routes/categoria-route');
-var producto = require('./routes/producto-route');
 var proveedor = require('./routes/proveedor-route');
+var producto = require('./routes/producto-route');
+
 var app = express();
 
 // view engine setup

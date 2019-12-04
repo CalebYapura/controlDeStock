@@ -3,16 +3,16 @@ module.exports = (sequelize, DataTypes) => {
   const producto = sequelize.define('producto', {
     nombreproducto: DataTypes.STRING,
     precioproducto: DataTypes.STRING,
-    idcategoria: DataTypes.INTEGER,
-    idproveedor: DataTypes.INTEGER
+    categoriaId: DataTypes.INTEGER,
+    proveedorId: DataTypes.INTEGER
   }, {});
   producto.associate = function(models) {
     // associations can be defined here
-    producto.belongsTo(models.categoria);
-    producto.belongsTo(models.proveedor);
+    // producto.belongsTo(models.categoria);
+      producto.belongsTo(models.proveedor);
 
     producto.hasMany(models.pedido, {
-      foreignKey: 'idproducto', as: 'pedido'
+      foreignKey: 'productoId', as: 'pedido'
     });
   };
   return producto;

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     console.log(models);
     // associations can be defined here
     categoria.hasMany(models.producto,{
-      foreignKey:'idcategoria', as:'producto'
+      foreignKey:'categoriaId', as:'producto'
     });
   };
   return categoria;
