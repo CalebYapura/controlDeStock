@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { CategoriaComponent } from './categoria/categoria.component';
-
+//import { NgFor } from '@angular/common';
 
 
 const pagesRoutes: Routes = [

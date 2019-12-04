@@ -12,10 +12,9 @@ import { FormsModule } from "@angular/forms";
 import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProveedorComponent } from './proveedor/proveedor.component';
-import { ClienteComponent } from './cliente/cliente.component';
+
 import { ProductoComponent } from './producto/producto.component';
-import { PedidoComponent } from './pedido/pedido.component';
-import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
+
 
 @NgModule({
   declarations: [
@@ -25,10 +24,9 @@ import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.componen
     Graficas1Component,
     CategoriaComponent,
     ProveedorComponent,
-    ClienteComponent,
+ 
     ProductoComponent,
-    PedidoComponent,
-    DetallePedidoComponent
+  
     
   ],
   exports: [//para que de puedan acceder desde cualquier logar 
