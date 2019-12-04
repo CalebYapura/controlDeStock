@@ -1,24 +1,23 @@
+
 const models = require('../models');
 
 
+
 function get(request, response) {
-    models.categoria.findAll({
-        // attributes: ['categoriaId', 'proveedorId','nombreproducto','precioproducto']
-        attributes: { exclude: ['[categoriaId]'] }
-    }).then(data => {
-           return  response.json(data);
+    models.detallepedido.findAll().then(data => {
+            response.json(data);
         }
     )
-        .catch(function (err) {
-            return response.json(err);
-        });
 }
 
 function create(request, response) {
     console.log(request);
-    models.categoria.create({
-        nombre: request.body.nombre,
-        descripcion: request.body.descripcion,
+    models.detallepedido.create({
+        id: request.body.id,
+        fechaventa: request.body.fechaventa,
+        cantidad: request.body.cantidad,
+        pedidoId: request.body.pedidoId,
+
 
     }).then(function (data) {
         if (data) {
@@ -31,7 +30,7 @@ function create(request, response) {
 
 function update(req, res) { //falta actualizar
     const nuevoDato = req.body;
-    models.categoria.update(nuevoDato, {where: {id: req.params.id}})
+    models.detallepedido.update(nuevoDato, {where: {id: req.params.id}})
         .then(date => {
             return res.status(200).json({message: "actualizado"});
         })
@@ -42,7 +41,7 @@ function update(req, res) { //falta actualizar
 
 function eliminar(req, res) {
     // console.log(req.params.id);
-    models.categoria.destroy({where: {id: req.params.id}})
+    models.detallepedido.destroy({where: {id: req.params.id}})
         .then(date => {
             return res.status(200).json({message: "Eliminado correctamente "});
         })
@@ -53,18 +52,20 @@ function eliminar(req, res) {
 
 function getId(req, res) {
     // models.socios.find(req.params.id)
-    models.categoria.findOne({
+    models.detallepedido.findOne({
         where: {id: req.params.id},
+        include: [
+            {model: models.pedido, as: models.pedido},
 
+        ]
     })
         .then(data => {
             console.log(data);
             return res.status(200).json(data);
         })
         .catch(function (err) {
-            return res.status(404).json({message: "No existe categoria"});
+            return res.status(404).json({message: "No existe el cliente"});
         });
 }
 
 module.exports = {get, create, update, eliminar, getId}
-
