@@ -11,27 +11,28 @@ export class CategoriaService {
     baseUrl: string;
 
   constructor(protected httpClient:HttpClient) {
-      this.baseUrl='http://localhost:3030/categoria'
+
+      this.baseUrl='http://localhost:3030/categoria';
    }
 
 
 
     getAll(): Observable<Categoria[]> {// este metodo obtiene todo  los artistas
         
-        return this.httpClient.get<Categoria[]>(this.baseUrl + '/get');
+        return this.httpClient.get<Categoria[]>(this.baseUrl );
     }
 
-            /*create(artista: Artista): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
-                return this.httpClient.post(this.baseUrl + '/guardar', artista);
-        }
-
-    delete(id: number): Observable<Artista> { // elimina
-        return this.httpClient.delete<Artista>(this.baseUrl + '/eliminar/' + id);
+    create(artista: Categoria): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
+        return this.httpClient.post(this.baseUrl + '/guardar', Categoria);
     }
 
-    update(idArtista: number, artista: Artista): Observable<any> {// este actualiza
+    delete(id: number): Observable<Categoria> { // elimina
+        return this.httpClient.delete<Categoria>(this.baseUrl + '/eliminar/' + id);
+    }
+
+    update(id: number, categoria: Categoria): Observable<any> {// este actualiza
         // return this.httpClient.put(`${this.baseUrl}/${idArtista}`, artista);
-        return this.httpClient.post(this.baseUrl + '/actualizar/' + idArtista, artista);
+    return this.httpClient.post(this.baseUrl + '/actualizar/' + id, categoria);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
-    }*/
+    }
 }
