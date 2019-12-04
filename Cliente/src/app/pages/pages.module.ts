@@ -9,6 +9,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProgressComponent } from "./progress/progress.component";
 import { Graficas1Component } from "./graficas1/graficas1.component";
 import { FormsModule } from "@angular/forms";
+import { CategoriaComponent } from './categoria/categoria.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FormsModule } from "@angular/forms";
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
+    CategoriaComponent
+    
   ],
   exports: [//para que de puedan acceder desde cualquier logar 
     PagesComponent,
@@ -25,7 +29,8 @@ import { FormsModule } from "@angular/forms";
   ], imports: [
     SharedModule,
     PAGES_ROUTES,//sus propias rutas
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class PagesModule { }
