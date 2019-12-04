@@ -1,28 +1,38 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('detallepedidos', {
+    return queryInterface.createTable('productos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fechaventa: {
-        type: Sequelize.FLOAT
-      },
-      cantidad: {
-        type: Sequelize.FLOAT
-      },
-      pedidoId: {
+      categoriaId: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'pedidos',
+            tableName: 'categoria',
             schema: 'dbo'
-          },
-          key: 'id'
+          }
+          , key: 'id'
         }
+      },
+      proveedorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'proveedors',
+            schema: 'dbo'
+          }
+          , key: 'id'
+        }
+      },
+      nombreproducto: {
+        type: Sequelize.STRING
+      },
+      precioproducto: {
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +45,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('detallepedidos');
+    return queryInterface.dropTable('productos');
   }
 };

@@ -8,3 +8,4 @@ router.put('/:id', categoriaContoller.update);
 router.delete('/:id', categoriaContoller.eliminar);
 router.get('/:id', categoriaContoller.getId);
 module.exports = router;
+
