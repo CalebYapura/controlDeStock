@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   detallepedido.associate = function(models) {
     // associations can be defined here
+    detallepedido.belongsTo(models.pedido);
   };
   return detallepedido;
 };

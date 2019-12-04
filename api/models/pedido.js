@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     pedido.belongsTo(models.producto);
     pedido.belongsTo(models.cliente);
+
+     pedido.hasMany(models.detallepedido,{
+      foreignKey: 'idpedido', as: 'detallepedido'
+     })
   };
   return pedido;
 };
