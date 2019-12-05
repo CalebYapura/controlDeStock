@@ -12,6 +12,7 @@ import { FormsModule } from "@angular/forms";
 import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProveedorComponent } from './proveedor/proveedor.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 import { ProductoComponent } from './producto/producto.component';
 
@@ -24,7 +25,7 @@ import { ProductoComponent } from './producto/producto.component';
     Graficas1Component,
     CategoriaComponent,
     ProveedorComponent,
- 
+    ClienteComponent,
     ProductoComponent,
   
     

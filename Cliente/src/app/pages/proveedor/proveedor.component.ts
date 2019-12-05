@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ProveedorService } from '../../services/proveedor.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Proveedor } from '../../models/proveedor.model';
+//un componente
 @Component({
-  selector: 'app-proveedor',
-  templateUrl: './proveedor.component.html',
-  styleUrls: ['./proveedor.component.sass']
+    selector:'app-proveedor',
+    templateUrl: './Proveedor.component.html'
 })
-export class ProveedorComponent implements OnInit {
+export class ProveedorComponent {
+  proveedors:Proveedor[];
 
-  constructor() { }
+  constructor(private proveedorService:ProveedorService){}
 
-  ngOnInit() {
+  ngOnInit(): void {
+  this.listarProveedor();
   }
-
+  listarProveedor(){
+  this.proveedorService.getAll().subscribe(
+      date=>{
+          console.log(date);
+          this.proveedors=date;
+          
+      },
+      error=>{
+          console.log(error);
+         
+      }
+      );
+  }
 }

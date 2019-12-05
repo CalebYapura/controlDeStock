@@ -10,6 +10,7 @@ import { Categoria } from '../../models/categoria.model';
 })
 export class CategoriaComponent {
     categorias:Categoria[];
+
     constructor(private categoriaService:CategoriaService){}
 
     ngOnInit(): void {
@@ -20,7 +21,7 @@ export class CategoriaComponent {
         date=>{
             console.log(date);
             this.categorias=date;
-
+            
         },
         error=>{
             console.log(error);
