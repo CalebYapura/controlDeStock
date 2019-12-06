@@ -1,8 +1,8 @@
 export class DetallePedido{
     public id:number;
-    public precioVenta:number;
-    public productoId:number;
-    public clienteId:number;
+    public fechaVenta:number;
+    public cantidadId:number;
+    public pedidoId:number;
 
  
 }
