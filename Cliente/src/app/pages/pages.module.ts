@@ -13,8 +13,10 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ClienteComponent } from './cliente/cliente.component';
-
+import { PedidoComponent } from './pedido/pedido.component';
+import { DetallePedidoComponent } from './detallepedido/detallepedido.component';
 import { ProductoComponent } from './producto/producto.component';
+
 
 
 @NgModule({
@@ -27,7 +29,10 @@ import { ProductoComponent } from './producto/producto.component';
     ProveedorComponent,
     ClienteComponent,
     ProductoComponent,
-  
+    PedidoComponent,
+    DetallePedidoComponent,
+
+
     
   ],
   exports: [//para que de puedan acceder desde cualquier logar 

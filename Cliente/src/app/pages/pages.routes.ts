@@ -8,6 +8,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ProductoComponent } from './producto/producto.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { DetallePedidoComponent } from './detallepedido/detallepedido.component';
 
 
 //import { NgFor } from '@angular/common';
@@ -25,7 +27,10 @@ const pagesRoutes: Routes = [
             { path: "proveedor", component: ProveedorComponent },
             { path: "cliente", component: ClienteComponent },
             { path: "producto", component: ProductoComponent },
+            { path: "pedido", component: PedidoComponent },
+            { path: "detallepedido", component: DetallePedidoComponent },
 
+            
             { path: "", redirectTo: "/dashboard", pathMatch: "full" }
         ]
     },
