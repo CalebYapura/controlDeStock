@@ -18,7 +18,7 @@ export class CategoriaService {
 
 
     getAll(): Observable<Categoria[]> {// este metodo obtiene todo  los artistas
-        
+
         return this.httpClient.get<Categoria[]>(this.baseUrl );
     }
 
@@ -35,4 +35,12 @@ export class CategoriaService {
     return this.httpClient.post(this.baseUrl + '/actualizar/' + id, categoria);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
     }
+  // para obtener empresa falta los id
+//   getId(id: string)  Observable < Empresa> {
+// return this.httpClient.
+//   }
+  getId(id: string): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl + '/' + id);
+  }
+
 }

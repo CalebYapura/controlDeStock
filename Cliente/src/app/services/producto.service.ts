@@ -12,13 +12,13 @@ export class ProductoService {
 
   constructor(protected httpClient:HttpClient) {
 
-      this.baseUrl='http://localhost:3080/producto';
+      this.baseUrl='http://localhost:3030/producto';
    }
 
 
 
     getAll(): Observable<Producto[]> {// este metodo obtiene todo  los artistas
-        
+
         return this.httpClient.get<Producto[]>(this.baseUrl );
     }
 
