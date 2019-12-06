@@ -10,6 +10,8 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 //componentes 
 import { RegisterComponent } from './login/register.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -25,6 +27,9 @@ import { RegisterComponent } from './login/register.component';
 
     APP_ROUTES,
     PagesModule,
+    RouterModule
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]

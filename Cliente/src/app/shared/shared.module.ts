@@ -3,6 +3,7 @@ import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,14 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
         BreadcumbsComponent,
         HeaderComponent,
         SidebarComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
+       
+        
+    ],
+    imports: [
+       RouterModule
+
     ]
+    
 })
 export class SharedModule { }

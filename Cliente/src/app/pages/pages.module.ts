@@ -16,6 +16,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { DetallePedidoComponent } from './detallepedido/detallepedido.component';
 import { ProductoComponent } from './producto/producto.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -39,12 +40,14 @@ import { ProductoComponent } from './producto/producto.component';
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    Graficas1Component
+    Graficas1Component,
+    RouterModule
   ], imports: [
     SharedModule,
     PAGES_ROUTES,//sus propias rutas
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ]
 })
 export class PagesModule { }
