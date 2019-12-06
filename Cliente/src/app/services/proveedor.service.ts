@@ -22,7 +22,7 @@ export class ProveedorService {
         return this.httpClient.get<Proveedor[]>(this.baseUrl );
     }
 
-    create(artista: Proveedor): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
+    create(proveedor: Proveedor): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
         return this.httpClient.post(this.baseUrl + '/guardar', Proveedor);
     }
 

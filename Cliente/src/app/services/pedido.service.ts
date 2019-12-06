@@ -22,7 +22,7 @@ export class PedidoService {
         return this.httpClient.get<Pedido[]>(this.baseUrl );
     }
 
-    create(artista: Pedido): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
+    create(pedido: Pedido): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
         return this.httpClient.post(this.baseUrl + '/guardar', Pedido);
     }
 

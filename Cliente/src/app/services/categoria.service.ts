@@ -22,12 +22,12 @@ export class CategoriaService {
         return this.httpClient.get<Categoria[]>(this.baseUrl );
     }
 
-    create(artista: Categoria): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
-        return this.httpClient.post(this.baseUrl + '/guardar', Categoria);
+    create(categoria: Categoria): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
+        return this.httpClient.post(this.baseUrl , Categoria);
     }
 
     delete(id: number): Observable<Categoria> { // elimina
-        return this.httpClient.delete<Categoria>(this.baseUrl + '/eliminar/' + id);
+        return this.httpClient.delete<Categoria>(this.baseUrl + '/' + id);
     }
 
     update(id: number, categoria: Categoria): Observable<any> {// este actualiza
@@ -35,12 +35,4 @@ export class CategoriaService {
     return this.httpClient.post(this.baseUrl + '/actualizar/' + id, categoria);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
     }
-  // para obtener empresa falta los id
-//   getId(id: string)  Observable < Empresa> {
-// return this.httpClient.
-//   }
-  getId(id: string): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl + '/' + id);
-  }
-
 }

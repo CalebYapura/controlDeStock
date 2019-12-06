@@ -2,13 +2,13 @@ import { NgModule } from "@angular/core";
 // Modules
 import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
-//RUTAS HIJAS 
+//RUTAS HIJAS
 import { PAGES_ROUTES } from './pages.routes';
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProgressComponent } from "./progress/progress.component";
 import { Graficas1Component } from "./graficas1/graficas1.component";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CategoriaComponent } from './categoria/categoria.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProveedorComponent } from './proveedor/proveedor.component';
@@ -17,6 +17,7 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { DetallePedidoComponent } from './detallepedido/detallepedido.component';
 import { ProductoComponent } from './producto/producto.component';
 import { RouterModule } from '@angular/router';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -34,9 +35,9 @@ import { RouterModule } from '@angular/router';
     DetallePedidoComponent,
 
 
-    
+
   ],
-  exports: [//para que de puedan acceder desde cualquier logar 
+  exports: [//para que de puedan acceder desde cualquier logar
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
@@ -47,7 +48,9 @@ import { RouterModule } from '@angular/router';
     PAGES_ROUTES,//sus propias rutas
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

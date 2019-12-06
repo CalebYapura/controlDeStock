@@ -1,3 +1,4 @@
+
 <div class="container-fluid pt-5">
   <div class="row">
     <div class="col-md-5">
@@ -6,75 +7,65 @@
           <p class="text-info text-center h1">Categoria</p>
         </div>
         <div class="card-body text-info">
-          <form action="
-                " method="post">
+          <form [formGroup]="categoriaForm"  >
 
             <div class="form-row">
               <div class="form-group col">
                 <label for="inputnombre">Ingrese el Nombre</label>
-                <input type="text" class="form-control" id="inputnomsbre" name="nombre"
+                <input type="text" class="form-control" id="inputnomsbre"  formControlName="nombre"
                        placeholder="">
               </div>
               <div class="form-group col">
                 <label for="inputnombre">Ingrese la Descripcion</label>
-                <input type="text" class="form-control" id="inputnombre" name="nombre"
+                <input type="text" class="form-control" id="inputnombre" formControlName="descripcion"
                        placeholder="">
               </div>
             </div>
-
-            <button type="button" class="thead-dark">Agregar</button>
+            <button (click)="guardar()" [disabled]="categoriaForm.invalid">registrar</button>
+<!--            <button type="button" class="btn btn-primary ">Agregar</button>-->
 
           </form>
         </div>
       </div>
 
     </div>
-<div class="col-md-7">
-  <table class="table">
-    <thead class="thead-dark">
-    <tr>
-      <th>#</th>
-      <th>Nombres</th>
-      <th>Descripcion</th>
-      <th></th>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td>
-         <button type="button" class="btn btn-primary">eliminar</button>
-         <button type="button" class="btn btn-primary">actualizar</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-          <button type="button" class="btn btn-primary">eliminar</button>
-          <button type="button" class="btn btn-primary">actualizar</button>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-          <button type="button" class="btn btn-primary">eliminar</button>
-          <button type="button" class="btn btn-primary">actualizar</button>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td></td>
-      <td></td>
-          <button type="button" class="btn btn-primary">eliminar</button>
-          <button type="button" class="btn btn-primary">actualizar</button>
-    </tr>
-
-    </tbody>
-  </table>
-</div>
   </div>
 </div>
 
+<div class="col-md-7">
+  <div class="card border-info ">
+    <div class="card-header">
+      <p class="text-info text-center h1">Listar Categoria</p>
+    </div>
+    <div class="card-body text-info">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Acciones</th>
+          <!--              <th>Last Name</th>-->
+        </tr>
+        </thead>
+        <tbody *ngFor="let categoria of categorias; let i=index">
+        <tr>
+          <th scope="row">{{i + 1}}</th>
+          <td>{{categoria.nombre}}</td>
+          <!--              <td>Otto</td>-->
+          <td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="editCategoria(categoria.id)">EDITAR</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="eliminarCategoria(categoria.id)">ELIMINAR</button>
+          </td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
