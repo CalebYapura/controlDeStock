@@ -21,12 +21,16 @@ export class ProductoComponent {
       date=>{
           console.log(date);
           this.productos=date;
-          
+
       },
       error=>{
           console.log(error);
-         
+
       }
       );
+  }
+
+  eliminar(id: number) {
+
   }
 }
