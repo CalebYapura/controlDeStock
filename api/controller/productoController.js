@@ -4,7 +4,12 @@ const models = require('../models');
 
 
 function get(request, response) {
-    models.producto.findAll().then(data => {
+    models.producto.findAll({
+        include: [
+            {model: models.categoria, as: models.categoria},
+            {model: models.proveedor, as: models.proveedor}
+        ]
+    }).then(data => {
          return response.json(data);
         }
     )
