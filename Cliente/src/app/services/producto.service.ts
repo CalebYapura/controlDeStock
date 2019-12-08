@@ -17,22 +17,26 @@ export class ProductoService {
 
 
 
-    getAll(): Observable<Producto[]> {// este metodo obtiene todo  los artistas
+    getAll(): Observable<Producto[]> { // este metodo obtiene todo  los productos
 
         return this.httpClient.get<Producto[]>(this.baseUrl );
     }
 
-    create(artista: Producto): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
-        return this.httpClient.post(this.baseUrl + '/guardar', Producto);
+    create(producto: Producto): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
+        return this.httpClient.post(this.baseUrl , producto);
     }
 
     delete(id: number): Observable<Producto> { // elimina
-        return this.httpClient.delete<Producto>(this.baseUrl + '/eliminar/' + id);
+        return this.httpClient.delete<Producto>(this.baseUrl +  id);
     }
 
     update(id: number, producto: Producto): Observable<any> {// este actualiza
         // return this.httpClient.put(`${this.baseUrl}/${idArtista}`, artista);
-    return this.httpClient.post(this.baseUrl + '/actualizar/' + id, producto);
+    return this.httpClient.post(this.baseUrl + id, producto);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
     }
+  getId(id: string): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+id);
+
+  }
 }
