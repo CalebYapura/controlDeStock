@@ -51,46 +51,26 @@
         <th>#</th>
         <th>id</th>
         <th>CategoriaId</th>
-        <th>ProveedorId</th>
+        <th>Proveedor Nombre</th>
         <th>NombreProducto</th>
         <th>PrecioProducto</th>
         <th></th>
 
       </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let producto of productos">
       <tr>
         <th scope="row">1</th>
+        <td>{{producto.id}}</td>
         <td></td>
-        <td></td>
+        <td>{{producto.proveedor.nombre}}</td>
+        <td>{{producto.nombreproducto}}</td>
+        <td>{{producto.precioproducto}} bs</td>
         <td>
-           <button type="button" class="btn btn-primary">eliminar</button>
+           <button type="button" class="btn btn-primary" (click)="eliminar(producto.id)">eliminar</button>
            <button type="button" class="btn btn-primary">actualizar</button>
         </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td></td>
-        <td><button type="button" class="btn btn-primary">eliminar</button>
-          <button type="button" class="btn btn-primary">actualizar</button></td>
-
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td></td>
-        <td>
-            <button type="button" class="btn btn-primary">eliminar</button>
-            <button type="button" class="btn btn-primary">actualizar</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td></td>
-        <td></td>
-            <button type="button" class="btn btn-primary">eliminar</button>
-            <button type="button" class="btn btn-primary">actualizar</button>
-      </tr>
-
       </tbody>
     </table>
   </div>
