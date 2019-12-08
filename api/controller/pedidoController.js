@@ -4,7 +4,12 @@ const models = require('../models');
 
 
 function get(request, response) {
-    models.pedido.findAll().then(data => {
+    models.pedido.findAll({
+        include: [
+            { model: models.cliente, as: models.cliente},
+            { model: models.producto, as: models.producto}
+        ],
+    }).then(data => {
             response.json(data);
         }
     )
