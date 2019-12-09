@@ -27,7 +27,7 @@ export class ProductoService {
     }
 
     delete(id: number): Observable<Producto> { // elimina
-        return this.httpClient.delete<Producto>(this.baseUrl +  id);
+        return this.httpClient.delete<Producto>(this.baseUrl +'/'+  id);
     }
 
     update(id: number, producto: Producto): Observable<any> {// este actualiza

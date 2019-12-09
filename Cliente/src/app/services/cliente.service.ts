@@ -23,16 +23,19 @@ export class ClienteService {
     }
 
     create(cliente: Cliente): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
-        return this.httpClient.post(this.baseUrl + '/guardar', Cliente);
+        return this.httpClient.post(this.baseUrl , cliente);
     }
 
     delete(id: number): Observable<Cliente> { // elimina
-        return this.httpClient.delete<Cliente>(this.baseUrl + '/eliminar/' + id);
+        return this.httpClient.delete<Cliente>(this.baseUrl + '/' + id);
     }
 
     update(id: number, cliente: Cliente): Observable<any> {// este actualiza
         // return this.httpClient.put(`${this.baseUrl}/${idArtista}`, artista);
-    return this.httpClient.post(this.baseUrl + '/actualizar/' + id, cliente);
+    return this.httpClient.post(this.baseUrl  + id, cliente);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
     }
+  getId(id: string): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+id);
+  }
 }

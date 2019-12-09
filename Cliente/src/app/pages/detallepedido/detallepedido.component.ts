@@ -24,12 +24,23 @@ export class DetallePedidoComponent {
       date=>{
           console.log(date);
           this.detallepedidos=date;
-          
+
       },
       error=>{
           console.log(error);
-         
+
       }
       );
+  }
+  eliminar(id: number) {
+    this.detallepedidoService.delete(id).subscribe(
+      data =>{
+        console.log(data);
+        this.listarDetallePedido();
+      },
+      error =>{
+        console.log(error);
+      }
+    )
   }
 }

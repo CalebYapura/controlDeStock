@@ -23,12 +23,23 @@ export class PedidoComponent {
       date=>{
           console.log(date);
           this.pedidos=date;
-          
+
       },
       error=>{
           console.log(error);
-         
+
       }
       );
+  }
+  eliminar(id: number) {
+    this.pedidoService.delete(id).subscribe(
+      data =>{
+        console.log(data);
+        this.listarPedido();
+      },
+      error =>{
+        console.log(error);
+      }
+    )
   }
 }

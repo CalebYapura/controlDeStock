@@ -21,12 +21,24 @@ export class ClienteComponent {
       date=>{
           console.log(date);
           this.clientes=date;
-          
+
       },
       error=>{
           console.log(error);
-         
+
       }
       );
   }
+  eliminar(id: number) {
+    this.clienteService.delete(id).subscribe(
+      data =>{
+        console.log(data);
+        this.listarCliente();
+      },
+      error =>{
+        console.log(error);
+      }
+    )
+  }
+
 }

@@ -23,16 +23,19 @@ export class PedidoService {
     }
 
     create(pedido: Pedido): Observable<any> { // este metodo crea un artista  y recive un  artista por parametro
-        return this.httpClient.post(this.baseUrl + '/guardar', Pedido);
+        return this.httpClient.post(this.baseUrl , pedido);
     }
 
     delete(id: number): Observable<Pedido> { // elimina
-        return this.httpClient.delete<Pedido>(this.baseUrl + '/eliminar/' + id);
+        return this.httpClient.delete<Pedido>(this.baseUrl + '/' + id);
     }
 
     update(id: number, pedido: Pedido): Observable<any> {// este actualiza
         // return this.httpClient.put(`${this.baseUrl}/${idArtista}`, artista);
-    return this.httpClient.post(this.baseUrl + '/actualizar/' + id, Pedido);
+    return this.httpClient.post(this.baseUrl  + id, Pedido);
         // return this.httpClient.post<Artista>(this.baseUrl + '/actualizar/' + idArtista , artista);
     }
+  getId(id: string): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+id);
+  }
 }

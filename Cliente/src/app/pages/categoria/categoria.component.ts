@@ -68,4 +68,5 @@ categoriaForm:FormGroup;
   editCategoria(id: any) {
 
   }
+
 }

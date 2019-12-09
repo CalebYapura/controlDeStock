@@ -21,12 +21,23 @@ export class ProveedorComponent {
       date=>{
           console.log(date);
           this.proveedors=date;
-          
+
       },
       error=>{
           console.log(error);
-         
+
       }
       );
+  }
+  eliminar(id: number) {
+    this.proveedorService.delete(id).subscribe(
+      data =>{
+        console.log(data);
+        this.listarProveedor();
+      },
+      error =>{
+        console.log(error);
+      }
+    )
   }
 }

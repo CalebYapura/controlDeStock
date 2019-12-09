@@ -45,7 +45,7 @@ function update(req, res) { //falta actualizar
 }
 
 function eliminar(req, res) {
-    // // console.log(req.params.id);
+    console.log(req.params.id);
     models.producto.destroy({where: {id: req.params.id}})
         .then(date => {
             return res.status(200).json({message: "Eliminado correctamente "});

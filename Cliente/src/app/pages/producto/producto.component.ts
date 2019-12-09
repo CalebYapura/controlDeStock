@@ -31,6 +31,14 @@ export class ProductoComponent {
   }
 
   eliminar(id: number) {
-
+this.productoService.delete(id).subscribe(
+  data =>{
+    console.log(data);
+    this.listarProducto();
+  },
+  error =>{
+    console.log(error);
+  }
+)
   }
 }

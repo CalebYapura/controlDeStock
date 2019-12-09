@@ -26,7 +26,7 @@ export class ProveedorService {
   }
 
   delete(id: number): Observable<Proveedor> { // elimina
-    return this.httpClient.delete<Proveedor>(this.baseUrl + id);
+    return this.httpClient.delete<Proveedor>(this.baseUrl +'/'+ id);
   }
 
   update(id: number, proveedor: Proveedor): Observable<any> {// este actualiza
