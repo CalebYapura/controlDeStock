@@ -10,18 +10,20 @@
           <form [formGroup]="categoriaForm"  >
 
             <div class="form-row">
+
               <div class="form-group col">
-                <label for="inputnombre">Ingrese el Nombre</label>
+                <label for="inputnombre">Nombre</label>
                 <input type="text" class="form-control" id="inputnomsbre"  formControlName="nombre"
                        placeholder="">
               </div>
               <div class="form-group col">
-                <label for="inputnombre">Ingrese la Descripcion</label>
+                <label for="inputnombre"> Descripcion</label>
                 <input type="text" class="form-control" id="inputnombre" formControlName="descripcion"
                        placeholder="">
               </div>
             </div>
-            <button (click)="guardar()" [disabled]="categoriaForm.invalid">registrar</button>
+
+            <button (click)="guardar()" [disabled]="categoriaForm.invalid">añadir</button>
 <!--            <button type="button" class="btn btn-primary ">Agregar</button>-->
 
           </form>
@@ -44,7 +46,7 @@
         <tr>
           <th>#</th>
           <th>Nombre</th>
-          <th>Acciones</th>
+          <th>descripcion</th>
           <!--              <th>Last Name</th>-->
         </tr>
         </thead>
@@ -52,6 +54,7 @@
         <tr>
           <th scope="row">{{i + 1}}</th>
           <td>{{categoria.nombre}}</td>
+          <td>{{categoria.descripcion}}</td>
           <!--              <td>Otto</td>-->
           <td>
           <td>

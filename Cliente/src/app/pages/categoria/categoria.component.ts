@@ -20,12 +20,12 @@ categoriaForm:FormGroup;
       this.crearFormulario();
       this.listarCategoria();
     }
-      crearFormulario(){
-      this.categoriaForm=this.formBuilder.group({
-        nombre:["",[Validators.required]],
-        descripcion:["",[Validators.required]],
-      });
-      }
+    crearFormulario(){
+    this.categoriaForm=this.formBuilder.group({
+      nombre:["",[Validators.required]],
+      descripcion:["",[Validators.required]],
+    });
+    }
     guardar(){
       const newCategoria = new  Categoria();
        newCategoria.nombre= this.categoriaForm.value.nombre;

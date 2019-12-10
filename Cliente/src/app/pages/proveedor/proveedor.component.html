@@ -34,7 +34,7 @@
                             </div>
             </div>
 
-            <button type="button" class="thead-dark">Agregar</button>
+            <button (click)="guardarProveedor()" [disabled]="proveedorForm.invalid">añadir</button>
 
           </form>
         </div>
@@ -59,12 +59,12 @@
       <th scope="row">{{i + 1}}</th>
       <td>{{proveedor.nombre}}</td>
       <td>{{proveedor.apellidos}}</td>
-      <td>{{proveedor.direccion}}</td>ss
+      <td>{{proveedor.direccion}}</td>
       <td>{{proveedor.celular}}</td>
       <!--              <td>Otto</td>-->
       <td>
       <td>
-        <button type="button" class="btn btn-primary" (click)="(proveedor.id)">EDITAR</button>
+        <button type="button" class="btn btn-primary" (click)="editProveedor(proveedor.id)">EDITAR</button>
       </td>
       <td></td>
       <td>
